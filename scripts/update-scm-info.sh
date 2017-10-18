@@ -17,7 +17,7 @@ scm_base="https://gitbox.apache.org/repos/asf/${module_name}"
 
 sed -i "s#<connection>scm.*</connection>#<connection>scm:git:${scm_base}</conncetion>#" pom.xml
 sed -i "s#<developerConnection>scm.*</developerConnection>#<developerConnection>scm:git:${scm_base}</developerConnection>#" pom.xml
-sed -i "s#<url>.*svn.apache.org.*</url>#<url>https://gitbox.apache.org/repos/asf?p=${module_name}.git</url>#" pom.xml
+sed -i "s#<url>.*svn.apache.org.*</url>#<url>https://gitbox.apache.org/repos/asf?p=${module_name}</url>#" pom.xml
 
 git add pom.xml
 git commit -m 'SLING-7162 - Update SCM information in all POM files to reference Git'
