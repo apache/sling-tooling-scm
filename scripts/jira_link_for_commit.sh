@@ -8,5 +8,6 @@ fi
 hash=$(git rev-parse --short ${commit})
 base=$(git remote get-url origin)
 url=${base%.git}/commit/${hash}
+repo_name=$(echo $base | awk -F '/' '{ gsub(".git", "", $5); print $5}')
 
-echo "[commit ${hash}|${url}]"
+echo "[${repo_name} commit ${hash}|${url}]"
